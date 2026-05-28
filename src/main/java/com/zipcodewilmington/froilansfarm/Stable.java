@@ -14,7 +14,7 @@ public class Stable {
         horses.add(horse);
     }
 
-    public List<Horse> getHorse() {
+    public List<Horse> getHorses() {
         return horses;
     }
 }
