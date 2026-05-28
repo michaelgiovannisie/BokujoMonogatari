@@ -4,10 +4,10 @@ public class Farm {
     private Field field;
 
     public Farm() {
-        field = new field();
+        field = new Field();
     }
 
-    public Field getFiel() {
+    public Field getField() {
         return field;
     }
 }
