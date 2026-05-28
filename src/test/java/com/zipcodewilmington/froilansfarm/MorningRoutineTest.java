@@ -1,11 +1,10 @@
 package com.zipcodewilmington.froilansfarm;
 
-import org.junit.jupiter.api.Test;
-
 import java.util.ArrayList;
 import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.assertDoesNotThrow;
+import org.junit.jupiter.api.Test;
 
 public class MorningRoutineTest {
 
@@ -21,11 +20,9 @@ public class MorningRoutineTest {
         stable1.addHorse(new Horse("Horse1"));
         stable1.addHorse(new Horse("Horse2"));
         stable1.addHorse(new Horse("Horse3"));
-
         stable2.addHorse(new Horse("Horse4"));
         stable2.addHorse(new Horse("Horse5"));
         stable2.addHorse(new Horse("Horse6"));
-
         stable3.addHorse(new Horse("Horse7"));
         stable3.addHorse(new Horse("Horse8"));
         stable3.addHorse(new Horse("Horse9"));
@@ -45,19 +42,15 @@ public class MorningRoutineTest {
     void testFroilandaCanRideEachHorse() {
 
         Pilot froilanda = new Pilot("Froilanda");
-
         Stable stable1 = new Stable();
         Stable stable2 = new Stable();
         Stable stable3 = new Stable();
-
         stable1.addHorse(new Horse("Horse1"));
         stable1.addHorse(new Horse("Horse2"));
         stable1.addHorse(new Horse("Horse3"));
-
         stable2.addHorse(new Horse("Horse4"));
         stable2.addHorse(new Horse("Horse5"));
         stable2.addHorse(new Horse("Horse6"));
-
         stable3.addHorse(new Horse("Horse7"));
         stable3.addHorse(new Horse("Horse8"));
         stable3.addHorse(new Horse("Horse9"));
@@ -92,7 +85,6 @@ public class MorningRoutineTest {
 
         assertDoesNotThrow(() -> {
             froilan.eat(new EarCorn());
-
             froilan.eat(new Tomato());
             froilan.eat(new Tomato());
 
@@ -110,9 +102,7 @@ public class MorningRoutineTest {
         assertDoesNotThrow(() -> {
             froilanda.eat(new EarCorn());
             froilanda.eat(new EarCorn());
-
             froilanda.eat(new Tomato());
-
             froilanda.eat(new EdibleEgg());
             froilanda.eat(new EdibleEgg());
         });
