@@ -1,8 +1,8 @@
 package com.zipcodewilmington.froilansfarm;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 import org.junit.jupiter.api.Test;
-
-import static org.junit.jupiter.api.Assertions.*;
 
 public class SundayTest {
 
@@ -21,5 +21,22 @@ public class SundayTest {
         assertTrue(row1.getCrops().get(0) instanceof CornStalk);
         assertTrue(row2.getCrops().get(0) instanceof TomatoPlant);
         assertTrue(row3.getCrops().get(0) instanceof LettucePlant);
+    }
+
+    @Test
+    void cropRowStartsEmpty() {
+        CropRow row = new CropRow();
+        assertTrue(row.getCrops().isEmpty());
+    }
+
+    @Test
+    void cropRowStoresMultipleCrops() {
+        CropRow row = new CropRow();
+
+        row.addCrop(new CornStalk());
+        row.addCrop(new TomatoPlant());
+        row.addCrop(new LettucePlant());
+
+        assertEquals(3, row.getCrops().size());
     }
 }
