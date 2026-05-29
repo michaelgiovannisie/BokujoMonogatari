@@ -60,4 +60,8 @@ public class Farm {
     public List<Stable> getStables() {
         return stables;
     }
+
+    public List<ChickenCoop> getChickenCoops() {
+        return chickenCoops;
+    }
 }
