@@ -23,4 +23,8 @@ public class CropRow {
     public void fertilize() {
         hasBeenFertilized = true;
     }
+
+    public boolean hasBeenFertilized() {
+        return hasBeenFertilized;
+    }
 }
