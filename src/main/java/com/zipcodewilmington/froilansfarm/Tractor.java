@@ -2,6 +2,8 @@ package com.zipcodewilmington.froilansfarm;
 
 public class Tractor extends FarmVehicle {
 
+    public Tractor(String name, String sound) { super(name, sound); }
+
     public void harvest(Crop<?> crop) {
         crop.harvest();
     }
