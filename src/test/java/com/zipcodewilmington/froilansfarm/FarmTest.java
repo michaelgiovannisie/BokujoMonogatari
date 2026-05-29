@@ -1,5 +1,7 @@
 package com.zipcodewilmington.froilansfarm;
 
+import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 import org.junit.jupiter.api.Test;
@@ -51,4 +53,59 @@ public class FarmTest {
         Farm farm = new Farm();
         assertNotNull(farm.getFarmHouse());
     }
+
+    @Test
+    void farmFieldHasFiveCropRows() {
+        Farm farm = new Farm();
+        assertEquals(5, farm.getField().getCropRows().size());
+    }
+
+    @Test
+    void farmHouseContainsFroilanAndFroilanda() {
+        Farm farm = new Farm();
+        assertEquals(2, farm.getFarmHouse().getPeople().size());
+    }
+
+    @Test
+    void farmHasTwoFarmVehicles() {
+        Farm farm = new Farm();
+        assertEquals(2, farm.getFarmVehicles().size());
+    }
+
+    @Test
+    void farmHasOneAircraft() {
+        Farm farm = new Farm();
+        int aircraftCount = 0;
+        for (FarmVehicle vehicle : farm.getFarmVehicles()) {
+            if (vehicle instanceof Aircraft) {
+                aircraftCount++;
+            }
+        }
+        assertEquals(1, aircraftCount);
+    }
+
+    @Test
+    void farmContainsCropDuster() {
+        Farm farm = new Farm();
+        boolean hasCropDuster = false;
+        for (FarmVehicle vehicle : farm.getFarmVehicles()) {
+            if (vehicle instanceof CropDuster) {
+                hasCropDuster = true;
+            }
+        }
+        assertEquals(true, hasCropDuster);
+    }
+
+    @Test
+    void farmContainsTractor() {
+        Farm farm = new Farm();
+        boolean hasTractor = false;
+        for (FarmVehicle vehicle : farm.getFarmVehicles()) {
+            if (vehicle instanceof Tractor) {
+                hasTractor = true;
+            }
+        }
+        assertEquals(true, hasTractor);
+    }
+
 }
