@@ -6,12 +6,19 @@ import java.util.List;
 public class Farm {
     private Field field;
     private FarmHouse farmHouse;
+    private List<FarmVehicle> farmVehicles;
     private List<ChickenCoop> chickenCoops;
     private List<Stable> stables;
 
     public Farm() {
         field = new Field();
         farmHouse = new FarmHouse();
+
+
+        farmVehicles = new ArrayList<>();
+        farmVehicles.add(new Tractor());
+        farmVehicles.add(new CropDuster());
+
         chickenCoops = new ArrayList<>();
         chickenCoops.add(new ChickenCoop());
         chickenCoops.add(new ChickenCoop());
@@ -63,5 +70,9 @@ public class Farm {
 
     public List<ChickenCoop> getChickenCoops() {
         return chickenCoops;
+    }
+
+    public List<FarmVehicle> getFarmVehicles() {
+        return farmVehicles;
     }
 }
