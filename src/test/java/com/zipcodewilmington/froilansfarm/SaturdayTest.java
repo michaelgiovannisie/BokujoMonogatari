@@ -27,4 +27,16 @@ public class SaturdayTest {
     void horseCanMakeNoise() {
         assertDoesNotThrow(() -> horse.makeNoise());
     }
+
+    @Test
+    void riderCanMountAndDismountFarmVehicles() {
+        Farmer froilan = new Farmer("Froilan");
+
+        assertDoesNotThrow(() -> {
+            froilan.mount(tractor);
+            froilan.dismount(tractor);
+            froilan.mount(cropDuster);
+            froilan.dismount(cropDuster);
+        });
+    }
 }

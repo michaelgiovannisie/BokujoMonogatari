@@ -29,4 +29,12 @@ public class MondayTest {
     void cropDusterCanFly() {
         assertDoesNotThrow(() -> cropDuster.fly());
     }
+
+    @Test
+    void cropDusterOperateFertilizesEntireFarm() {
+        cropDuster.operate(farm);
+        for (CropRow row : farm.getField().getCropRows()) {
+            assertTrue(row.hasBeenFertilized());
+        }
+    }
 }

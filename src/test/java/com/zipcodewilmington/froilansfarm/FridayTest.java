@@ -20,4 +20,26 @@ public class FridayTest {
         assertDoesNotThrow(() -> froilan.makeNoise());
         assertDoesNotThrow(() -> froilanda.makeNoise());
     }
+
+    @Test
+    void farmerCanMountAndDismountHorse() {
+        Farmer froilan = new Farmer("Froilan");
+        Horse horse = new Horse("Horse");
+
+        assertDoesNotThrow(() -> {
+            froilan.mount(horse);
+            froilan.dismount(horse);
+        });
+    }
+
+    @Test
+    void pilotCanMountAndDismountHorse() {
+        Pilot froilanda = new Pilot("Froilanda");
+        Horse horse = new Horse("Horse");
+
+        assertDoesNotThrow(() -> {
+            froilanda.mount(horse);
+            froilanda.dismount(horse);
+        });
+    }
 }

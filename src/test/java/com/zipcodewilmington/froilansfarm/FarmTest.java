@@ -1,12 +1,29 @@
 package com.zipcodewilmington.froilansfarm;
 
-import static org.junit.jupiter.api.Assertions.*;
-import static org.junit.jupiter.api.Assertions.assertTrue;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 import org.junit.jupiter.api.Test;
 
 public class FarmTest {
+
+    @Test
+    void farmFirstRowStartsWithCorn() {
+        Farm farm = new Farm();
+        assertTrue(farm.getField().getCropRows().get(0).getCrops().get(0) instanceof CornStalk);
+    }
+
+    @Test
+    void farmSecondRowStartsWithTomato() {
+        Farm farm = new Farm();
+        assertTrue(farm.getField().getCropRows().get(1).getCrops().get(0) instanceof TomatoPlant);
+    }
+
+    @Test
+    void farmThirdRowStartsWithLettuce() {
+        Farm farm = new Farm();
+        assertTrue(farm.getField().getCropRows().get(2).getCrops().get(0) instanceof LettucePlant);
+    }
 
     @Test
     void farmHasOneField() {

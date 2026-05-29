@@ -13,7 +13,11 @@ public class Farm {
     public Farm() {
         field = new Field();
         farmHouse = new FarmHouse();
-
+        field.getCropRows().get(0).addCrop(new CornStalk());
+        field.getCropRows().get(1).addCrop(new TomatoPlant());
+        field.getCropRows().get(2).addCrop(new LettucePlant());
+        field.getCropRows().get(3).addCrop(new LettucePlant());
+        field.getCropRows().get(4).addCrop(new LettucePlant());
 
         farmVehicles = new ArrayList<>();
         farmVehicles.add(new Tractor());

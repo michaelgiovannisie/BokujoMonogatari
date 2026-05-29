@@ -15,14 +15,9 @@ public class TuesdayTest {
         farm = new Farm();
         tractor = new Tractor();
 
-        farm.getField().getCropRows().get(0)
-                .addCrop(new CornStalk());
-
-        farm.getField().getCropRows().get(1)
-                .addCrop(new TomatoPlant());
-
-        farm.getField().getCropRows().get(2)
-                .addCrop(new LettucePlant());
+        farm.getField().getCropRows().get(0).addCrop(new CornStalk());
+        farm.getField().getCropRows().get(1).addCrop(new TomatoPlant());
+        farm.getField().getCropRows().get(2).addCrop(new LettucePlant());
     }
 
     @Test
@@ -41,5 +36,14 @@ public class TuesdayTest {
     @Test
     void tractorCanOperateOnFarm() {
         assertDoesNotThrow(() -> tractor.operate(farm));
+    }
+    @Test
+    void tractorOperateHarvestsEntireFarm() {
+        tractor.operate(farm);
+        for (CropRow row : farm.getField().getCropRows()) {
+            for (Crop<?> crop : row.getCrops()) {
+                assertTrue(crop.hasBeenHarvested());
+            }
+        }
     }
 }
