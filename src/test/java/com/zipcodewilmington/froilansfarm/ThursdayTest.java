@@ -9,8 +9,20 @@ public class ThursdayTest {
     void cornStalkCanYieldEarCorn() {
         CornStalk cornStalk = new CornStalk();
 
-        Edible earCorn = cornStalk.yield();
+        assertTrue(cornStalk.yield() instanceof EarCorn);
+    }
 
-        assertTrue(earCorn instanceof EarCorn);
+    @Test
+    void tomatoPlantCanYieldTomato() {
+        TomatoPlant tomatoPlant = new TomatoPlant();
+
+        assertTrue(tomatoPlant.yield() instanceof Tomato);
+    }
+
+    @Test
+    void lettucePlantCanYieldLettuce() {
+        LettucePlant lettucePlant = new LettucePlant();
+
+        assertTrue(lettucePlant.yield() instanceof Lettuce);
     }
 }
