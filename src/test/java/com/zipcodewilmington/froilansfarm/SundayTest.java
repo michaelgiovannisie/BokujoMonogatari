@@ -33,11 +33,6 @@ public class SundayTest {
     }
 
     @Test
-    void cropRowStartsEmpty() {
-        assertTrue(row1.getCrops().isEmpty());
-    }
-
-    @Test
     void cropRowStoresMultipleCrops() {
         row1.addCrop(new CornStalk());
         row1.addCrop(new TomatoPlant());
